@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="section-blue">
+    <div class="_10container special">
+        <h3 class="heading-10">{{videos.title}}<br></h3>
+       
+        {% for video in videos.videos %}
+            <div class="div-block-27">
+                <div class="div-block-28">
+                    <div class="div-block-29">
+                        <div class="plyr__video-embed video-tutorial" id="player" style="width: 100%; display: block;">
+                            <iframe
+                              src="https://www.youtube.com/embed/{{video.link}}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                            ></iframe>
+                          </div>
+                    </div>
+                </div>
+                <div id="w-node-7857eb69f45a-7ebc92ef" class="div-block-30">
+                    <h4 class="heading-100">{{video.t}}</h4>
+                </div>
+            </div>
+        {% endfor %}
+      
+        
+
+        <!-- <div class="div-block-27">
+            <div class="div-block-28">
+                <div class="div-block-29">
+                    <div class="plyr__video-embed video-tutorial" style="width: 100%; display: block;">
+                        <iframe
+                          src="https://www.youtube.com/embed/SI9iaAE1zKI?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                        ></iframe>
+                      </div>
+
+                </div>
+            </div>
+            <div id="w-node-6740d85146b7-7ebc92ef" class="div-block-30">
+                <h4 class="heading-11">ការបន្លាស់កូនបន្លែ</h4>
+            </div>
+        </div> -->
+    </div>
+    <div class="bottomspace"></div>
+</div>
+
+
+
+<script>
+   
+
+   const players = Array.from(document.querySelectorAll('.video-tutorial')).map(p => {
+       var play = new Plyr(p, 
+            {
+                muted: false
+            }
+       )
+       console.log("Im here")
+
+    });
+
+  </script>
+
+{% endblock %}

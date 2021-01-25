@@ -1,0 +1,143 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% if content %}
+ 
+
+<div class="margint60">
+    <div class="standard-container">
+        <div class="w-row">
+            <div class="w-col w-col-7">
+                <!-- <div><img
+                        src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfebb88ac4a8e3b21e0e8_factory.jpg"
+                        loading="lazy"
+                        sizes="(max-width: 479px) 86vw, (max-width: 767px) 87vw, (max-width: 991px) 50vw, 51vw"
+                        srcset="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfebb88ac4a8e3b21e0e8_factory-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfebb88ac4a8e3b21e0e8_factory.jpg 1600w"
+                        alt="" class="image-14"></div>
+                <div>
+                    <div class="w-layout-grid grid-2"><img
+                            src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfeb5168d57833dc46904_house.jpg"
+                            loading="lazy" alt="" class="image-15"><img
+                            src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfeb5168d571ac9c4690e_workplace1.jpg"
+                            loading="lazy" alt="" class="image-15"><img
+                            src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfea4d6f92eeb0fb467df_pink.jpg"
+                            loading="lazy" alt="" class="image-15"><img
+                            src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfebb88ac4a8e3b21e0e8_factory.jpg"
+                            loading="lazy"
+                            sizes="(max-width: 479px) 86vw, (max-width: 767px) 87vw, (max-width: 991px) 50vw, 51vw"
+                            srcset="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfebb88ac4a8e3b21e0e8_factory-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfebb88ac4a8e3b21e0e8_factory.jpg 1600w"
+                            alt="" class="image-15"></div>
+                </div> -->
+
+                <div class="splide" style="width: 100%;">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide"><div class="plyr__video-embed intro_video" id="player" style="width: 100%; display: block;">
+                                <iframe
+                                  src="https://www.youtube.com/embed/{{content.intro_video}}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                                ></iframe>
+                              </div>
+                            </li>
+                            
+                            {% for image in content.images %}
+                            
+                            <li class="splide__slide"><img
+                                src="{{image}}"
+                                loading="lazy"
+                                alt="" class="image-14">
+                            </li>
+                    
+                            {% endfor %}
+
+                           
+                        
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="column w-col w-col-5">
+                <h4>{{content.title}}</h4>
+                <div>BY: <span class="text-span-5">KLEM</span></div>
+                <!-- <div class="div-block-53">
+                    <div class="div-block-54">
+                        <div class="text-block-101"><span class="text-span-6">$</span><span
+                                class="text-span-7">25.99</span></div>
+                    </div>
+                    <div class="div-block-55">
+                        <div class="text-block-103">Save 12% </div>
+                        <div><span class="text-span-8">$30.99</span> </div>
+                    </div>
+                </div> -->
+                <div class="bluebox">Grade 7 - 9</div>
+                <div class="bluebox">{{content.subject}}</div>
+                <h1 class="heading-20">Description</h1>
+                    <div class="text-block-102">
+                        {{content.description}}
+                        
+                    </div>
+                    <a href="{{ url_for('video', kit=content.kit)}}"><div class="bluebox yellow">WATCH TUTORIAL</div></a>
+                    <a href="https://forms.gle/dRkfUJutkxvTkykr9"><div class="bluebox">BUY NOW</div></a>
+                <h1 class="heading-20">Special Benefit</h1>
+                <div class="text-block-102">
+                    <ul>
+                    {% for list in content.benefit %}
+                    
+                        <li style="color:#333; font-size: inherit;">{{list}}</li>
+                    
+                    {% endfor %}
+                </ul>
+                </div>
+                <h1 class="heading-20">Unique Features</h1>
+                <div class="text-block-102"><ul>
+                    {% for list in content.features %}
+                    
+                        <li style="color:#333; font-size: inherit;">{{list}}</li>
+                    
+                    {% endfor %}
+                </ul>
+                </div>
+                <h1 class="heading-20">Material List</h1>
+                <div class="text-block-102"><ul>
+                    {% for list in content.material %}
+                    
+                        <li style="color:#333; font-size: inherit;">{{list}}</li>
+                    
+                    {% endfor %}
+                </ul>
+                </div>
+                    
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottomspace"></div>
+
+<script src="{{ url_for('static', filename='js/splide.min.js') }}"></script>
+<script>
+    new Splide( '.splide', {type   : 'loop',}).mount();
+    
+    const players = Array.from(document.querySelectorAll('.intro_video')).map(p => {
+       var play = new Plyr(p, 
+            {
+                muted: false
+            }
+       )
+       console.log("Im here")
+
+    });
+</script>
+
+{% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="color: #0056fe; text-align: center;">This Kit is Coming Soon</h1>
+{% endif %}
+{% endblock %}

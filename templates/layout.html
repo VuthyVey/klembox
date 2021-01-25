@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="theme-color" content="#34A5DA">
+    <link rel="icon" sizes="192x192"
+        href="{{ url_for('static', filename='images/icons/android-launchericon-192-192.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" />
+    <title>Klem Box</title>
+    <meta name="description" content="Klem Box">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/test.css') }}">
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/splide.min.css') }}">
+    <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
+</head>
+
+<body>
+
+    <!-- Navitation Bar -->
+    <div data-collapse="medium" data-animation="over-right" data-duration="400" role="banner" class="navbar-2 w-nav">
+        <div class="navcontainer">
+            {% if referrer is defined %}
+            <a href="{{refferrer}}" class="link-block-8 w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f946b1beefd7d8cec92de49_backarrow.png"
+                    loading="lazy" width="42" alt="">
+                </a>
+            {% endif %}    
+                    <img
+                src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfe9670ebe498ee6de57a_klem.png"
+                loading="lazy" width="113" alt="" class="logo">
+            <nav role="navigation" class="nav-menu-2 w-nav-menu">
+                <div class="div-block-5">
+                    <div class="text-block-83">Welcome</div><img
+                        src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8dfe9670ebe44ba96de57c_workspace.jpg"
+                        loading="lazy" width="64" height="64" alt="" class="image-3">
+                </div><a href="/" aria-current="page" class="navlink w-nav-link">Home</a>
+                <a href="/product" aria-current="page" class="navlink w-nav-link">Product</a>
+                <!-- <a href="/discover"
+                    aria-current="page" class="navlink w-nav-link ">Discover</a><a href="/about"
+                    class="navlink w-nav-link">Resource</a> -->
+                    <a href="/resource" class="button-2 w-button">RESOURCE</a>
+            </nav>
+        </div>
+        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
+    </div>
+
+    {% block body %}
+
+    {% endblock %}
+    <!-- <div class="bottomspace"></div> -->
+    <div class="bottom-menu"><a href="/" class="bottommenuitem w-inline-block"><img
+                src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8e1261885c4b6c31835d41_home-page.png"
+                loading="lazy" width="43" alt="" class="image-5">
+            <div class="text-block-84">Home</div>
+        <!-- </a><a href="/discover" class="bottommenuitem w-inline-block"><img
+                src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8e125fca6a9c1bfc80b13f_book-shelf.png"
+                loading="lazy" width="43" alt="" class="image-5">
+            <div class="text-block-84">Collections</div> -->
+        </a><a href="/product" class="bottommenuitem w-inline-block"><img
+                src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8e1260b6101dd22044ddaf_store.png"
+                loading="lazy" width="43" alt="" class="image-5">
+            <div class="text-block-84">Product</div>
+        </a><a href="/resource" class="bottommenuitem w-inline-block"><img
+                src="https://uploads-ssl.webflow.com/5f8dfd84d751ba4b176eac9e/5f8e125fca6a9c1bfc80b13f_book-shelf.png"
+                loading="lazy" width="43" alt="" class="image-5">
+            <div class="text-block-84">Resource</div>
+        </a></div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>
+
+
+
+<!-- <ul>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('other_page') }}">Another Page</a></li>
+</ul> -->

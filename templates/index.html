@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="content">
+  <br>
+  <br>
+  <div class="w-layout-grid grid">
+   
+    {% for item in data %}
+    <a href="{{ url_for('subject_detail', subject_name=item.name)}}" class="w-inline-block">
+    <div class="div-block-3">
+      <div class="w-layout-grid grid-2"><img
+          src="{{ item.img }}"
+          loading="lazy" alt="">
+        <div id="w-node-eb1e34d42c9f-57107fe2" class="text-block-8">{{ item.khName }}</div>
+      </div>
+    </div>
+  </a>
+    {% endfor %}
+     
+  </div>
+</div>
+
+{% endblock %}

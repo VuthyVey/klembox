@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="section">
+    <h1 class="heading">{{lesson.name}}</h1>
+    <div class="due-date">
+        <div class="text-block-11">បង្កើត</div>
+        <p class="date assignment">12/14/20</p>
+    </div>
+</div>
+<div class="content-grid">
+    <div class="content">
+        <div>
+            <div class="section-title">ព័ត៌មានសកម្មភាព</div>
+            <div class="card">
+            
+                {{lesson.content|safe}}
+          
+            </div>
+        </div>
+    </div>
+    <div class="right-sidebar_wrapper">
+        <div class="sticky-sidebar">
+            <div class="section-title">វីដេអូណែនាំ</div>
+            <div class="card right-sidebar" style="padding: 5px;">
+                <div class="w-video w-embed"><div class="video">
+                    <div style="padding-top:56.17021276595745%" class="arquivo-video w-video w-embed"><iframe class="embedly-embed"
+                        src="https://www.youtube.com/embed/S5-j4jW2qcY"
+                        scrolling="no" title="YouTube embed" frameborder="0" allow="autoplay; fullscreen"
+                        allowfullscreen="true"></iframe></div>
+                  </div></div>
+            </div>
+            <div class="section-title">ឯកសារបន្ថែម</div>
+            <div class="card right-sidebar"><a href="/download" class="assets-link w-inline-block"><img
+                        src="https://uploads-ssl.webflow.com/5f731109d7cb3261e53fd2eb/5f73110a4d025d21cd108013_Download.svg"
+                        alt="" class="icon">
+                    <div class="text-block-12">ឯកសារកិច្ចការ<br></div>
+                </a></div>
+            <div class="section-title top-margin">ប្រអប់ឧបករណ៍<br>ពិសាធន៍</div>
+            <div class="w-dyn-list">
+                <div role="list" class="w-dyn-items">
+                    <div role="listitem" class="w-dyn-item">
+                        <div class="card right-sidebar"><a href="#" class="w-inline-block"><img loading="lazy" src=""
+                                    alt="" class="w-dyn-bind-empty"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

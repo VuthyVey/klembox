@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="theme-color" content="#34A5DA">
+    <link rel="icon" sizes="192x192"
+        href="{{ url_for('static', filename='images/icons/android-launchericon-192-192.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" />
+    <title>Klem Box</title>
+    <meta name="description" content="Klem Box">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/new.css') }}">
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/splide.min.css') }}">
+</head>
+
+<body class="body">
+    <div data-collapse="medium" data-animation="over-right" data-duration="400" role="banner" class="navbar-2 w-nav">
+        <div class="container-5 w-container"><a href="#" class="w-nav-brand"><img
+                    src="https://uploads-ssl.webflow.com/5f885e620586f8cbbaa6d0d1/5f889eb46f0cda4e62be4cd9_klem.png"
+                    loading="lazy" width="132" alt="" class="image-2"></a>
+            <nav role="navigation" class="nav-menu-2 w-nav-menu" style="transform: translateX(0px) translateY(0px);"><a
+                    href="#" class="nav-link-2 w-nav-link">Home</a><a href="#"
+                    class="nav-link-3 w-nav-link">សកម្មភាពពិសោធន៍ថ្នាក់ទី៧&nbsp;-&nbsp;៩</a><a href="#"
+                    class="nav-link-4 w-nav-link">គំនិតសិក្សាលើគម្រោងថ្នាក់ទី៧&nbsp;- ៩</a><a href="#"
+                    class="nav-link-4 w-nav-link">មេរៀនពីព័ត៌មានវិទ្យា</a><a href="#"
+                    class="nav-link-4 w-nav-link">ប្រអប់&nbsp;Klem Kit</a><a href="#"
+                    class="nav-link-4 w-nav-link">About Us</a></nav>
+            <div class="w-nav-button" id="menubtn" style="-webkit-user-select: text;" aria-label="menu" role="button"
+                tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
+                <div class="w-icon-nav-menu"></div>
+            </div>
+        </div>
+        <div class="w-nav-overlay" data-wf-ignore="" style="display: none;" id="sidemenu"
+            style="height: 2092px; display: block; width: 229.156px;">
+            <nav role="navigation" class="nav-menu-2 w-nav-menu" data-nav-menu-open=""
+                style="height: 2092px; transform: translateX(0px); transition: transform 400ms ease 0s;"><a href="#"
+                    class="nav-link-2 w-nav-link w--nav-link-open">Home</a><a href="{{url_for('home')}}"
+                    class="nav-link-3 w-nav-link w--nav-link-open">សកម្មភាពពិសោធន៍ថ្នាក់ទី៧&nbsp;-&nbsp;៩</a><a
+                    href="{{url_for('home')}}"
+                    class="nav-link-4 w-nav-link w--nav-link-open">គំនិតសិក្សាលើគម្រោងថ្នាក់ទី៧&nbsp;- ៩</a><a
+                    href="{{url_for('home')}}" class="nav-link-4 w-nav-link w--nav-link-open">មេរៀនពីព័ត៌មានវិទ្យា</a><a
+                    href="{{url_for('home')}}" class="nav-link-4 w-nav-link w--nav-link-open">ប្រអប់&nbsp;Klem Kit</a><a
+                    href="{{url_for('home')}}" class="nav-link-4 w-nav-link w--nav-link-open">About Us</a></nav>
+        </div>
+    </div>
+    <div class="section landing">
+        <div class="div-block first">
+            <h1 class="heading right">Free! K-12 Curriculum</h1>
+            <h1 class="heading left">Browse Free Lessons!</h1>
+        </div>
+    </div>
+    <div class="section-2">
+        <div class="container w-container">
+            <h1 class="heading-3">Find Curriculums</h1>
+            <div class="div-block-3">
+                <a href="{{url_for('grade')}}">
+                    <div class="div-block klembox" style="background-image: url('{{ url_for('static', filename='images/left-min.jpg') }}')">
+                        <h1 class="heading right">Klem Kit</h1>
+                        <h1 class="heading left">Rich and Innovative Learning Kits</h1>
+                    </div>
+                </a>
+                <a href="{{url_for('grade')}}">
+                    <div class="div-block klembox grade" style="background-image: url('{{ url_for('static', filename='images/bird-min.jpg') }}')">
+                        <h1 class="heading right">Grade 7 - 9</h1>
+                        <h1 class="heading left">Rich and Innovative Learning Kits</h1>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="section-3">
+        <div class="container-3 w-container">
+            <div class="div-block-4"><a href="#" class="button-type active w-button">Popular</a><a href="#"
+                    class="button-type w-button">Most Shared</a><a href="#" class="button-type w-button">New</a></div>
+            <h1 class="heading-4">Grade 7</h1>
+
+            <div class="splide" id="kitbox">
+
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <a href="{{url_for('grade')}}">
+
+                                <div class="div-block-5">
+                                    <div class="div-block-8">
+                                        <div class="text-block">Light Up</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="{{url_for('grade')}}">
+
+                                <div class="div-block-5">
+                                    <div class="div-block-8">
+                                        <div class="text-block">Light Up</div>
+                                    </div>
+                                    <div class="text-block">Light Up</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="{{url_for('grade')}}">
+
+                                <div class="div-block-5">
+                                    <div class="div-block-8">
+                                        <div class="text-block">Light Up</div>
+                                    </div>
+                                    <div class="text-block">Light Up</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <h1 class="heading-4">Grade 8</h1>
+            <div class="splide" id="grade8">
+
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <a href="{{url_for('grade')}}">
+
+                                <div class="div-block-5">
+                                    <div class="div-block-8">
+                                        <div class="text-block">Light Up</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="{{url_for('grade')}}">
+
+                                <div class="div-block-5">
+                                    <div class="div-block-8">
+                                        <div class="text-block">Light Up</div>
+                                    </div>
+                                    <div class="text-block">Light Up</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="{{url_for('grade')}}">
+
+                                <div class="div-block-5">
+                                    <div class="div-block-8">
+                                        <div class="text-block">Light Up</div>
+                                    </div>
+                                    <div class="text-block">Light Up</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h1 class="heading-4">Grade 9</h1>
+            <div class="splide" id="grade9">
+
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <a href="{{url_for('grade')}}">
+
+                                <div class="div-block-5">
+                                    <div class="div-block-8">
+                                        <div class="text-block">Light Up</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="{{url_for('grade')}}">
+
+                                <div class="div-block-5">
+                                    <div class="div-block-8">
+                                        <div class="text-block">Light Up</div>
+                                    </div>
+                                    <div class="text-block">Light Up</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="{{url_for('grade')}}">
+
+                                <div class="div-block-5">
+                                    <div class="div-block-8">
+                                        <div class="text-block">Light Up</div>
+                                    </div>
+                                    <div class="text-block">Light Up</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section landing bottom">
+        <div class="div-block first">
+            <h1 class="heading right">Brought to you by</h1>
+            <h1 class="heading left">Klem Box</h1>
+            <div class="footer-detail-right">
+                <div class="social-icon-wrap"><a href="#" class="social-link w-inline-block"><img
+                            src="https://uploads-ssl.webflow.com/5e360a99f4dd53fd793925af/5e362b9c121267b0fabbef18_social-instagram.svg"
+                            alt="" class="social-icon"></a><a href="#" class="social-link w-inline-block"><img
+                            src="https://uploads-ssl.webflow.com/5e360a99f4dd53fd793925af/5e362b9cf4dd53d8073a05cd_social-twitter.svg"
+                            alt="" class="social-icon"></a><a href="#" class="social-link w-inline-block"><img
+                            src="https://uploads-ssl.webflow.com/5e360a99f4dd53fd793925af/5e362b9c7c077b1740e27d28_social-youtube.svg"
+                            alt="" class="social-icon"></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="div-block-6"><img
+            src="https://uploads-ssl.webflow.com/5f885e620586f8cbbaa6d0d1/5f888ce52489517cb910e384_Layer%202.svg"
+            loading="lazy" alt=""><img
+            src="https://uploads-ssl.webflow.com/5f885e620586f8cbbaa6d0d1/5f888b96192b1099cba934b7_Path%201383.svg"
+            loading="lazy" alt=""><img
+            src="https://uploads-ssl.webflow.com/5f885e620586f8cbbaa6d0d1/5f888b3c7912d505afbbae22_Layer%202.svg"
+            loading="lazy" alt=""><img
+            src="https://uploads-ssl.webflow.com/5f885e620586f8cbbaa6d0d1/5f888cb4c893a41a3c2f171e_hi.svg"
+            loading="lazy" alt=""></div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script type="text/javascript">
+        var navbar = document.getElementById("sidemenu");
+        var navbtn = document.getElementById("menubtn");
+
+
+        navbtn.addEventListener("click", function () {
+            if (navbar.style.display === "block") {
+                navbar.style.display = "none";
+            } else {
+                navbar.style.display = "block";
+            }
+        });
+
+        window.addEventListener('click', function (e) {
+            if (navbtn.contains(e.target)) {
+                navbar.style.display = "block";
+            } else {
+                navbar.style.display = "none";
+            }
+        });
+        // navbar.addEventListener("click", function(){
+        //     if (navbar.style.display === "block") {
+        //         navbar.style.display = "none";
+        //     } else {
+        //         navbar.style.display = "block";
+        //     }
+        // });
+    </script>
+
+
+    <script src="{{ url_for('static', filename='js/splide.min.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#grade9', {
+                type: 'loop',
+                focus: 'center',
+                autoplay: true,
+                interval: 5000,
+                perPage: 2,
+                gap: '1em'
+            }).mount();
+
+            new Splide('#kitbox', {
+                type: 'loop',
+                focus: 'left',
+                autoplay: true,
+                interval: 5000,
+                perPage: 2,
+                gap: '1em'
+            }).mount();
+            new Splide('#grade8', {
+                type: 'loop',
+                focus: 'left',
+                autoplay: true,
+                interval: 5000,
+                perPage: 1,
+                gap: '1em'
+            }).mount();
+
+
+        });
+    </script>
+
+</body>
+
+</html>
